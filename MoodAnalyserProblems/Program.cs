@@ -2,15 +2,21 @@
 using System;
 namespace MoodAnalyserProblems
 {
+    /// <summary>
+    /// Mood analyser program to analyse the mood
+    /// </summary>
     class program
     {
+        public static string msg = null;
+
+        //Entry point to the program
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Mood Analyser Problem Program");
             //Calling the mood analyser object(UC1)
-            MoodAnalyser mood = new MoodAnalyser("Today I am Happy");
+            MoodAnalyser mood = new MoodAnalyser(msg);
             string reMood = mood.AnalyserMood();
-            Console.WriteLine("The Mood is {0}", reMood);
+            Console.WriteLine(reMood);
             Console.ReadLine();
         }
     }

@@ -11,9 +11,9 @@ namespace MoodAnalyserProblems
     /// </summary>
     public class MoodAnalyser
     {
-        //Declearing Variables.
+        //Declearing Variables Refactor.
         public string message;
-        //Parameterized Constructors.
+        //Constructor to initialize Message Refactor.
         public MoodAnalyser(string message)
         {
             this.message = message;
@@ -22,21 +22,26 @@ namespace MoodAnalyserProblems
         /// Creating Method for Happy Or Sad Mood.
         /// <summary>
         /// <return>
+        //Method to analyse the mood from the given message UC1
         public string AnalyserMood()
         {
-            if(this.message.ToLower().Contains("sad"))
+            //Handling exception if user provide null value UC2
+            try
             {
-                return "sad";
+
+                if (message.ToLower().Contains("sad"))
+                {
+                    return "sad";
+                }
+                else
+                {
+                    return "happy";
+                }
             }
-            else
+            catch (NullReferenceException)
             {
                 return "happy";
             }
-        }
-
-        internal string AnalyseMood()
-        {
-            throw new NotImplementedException();
         }
     }
 }

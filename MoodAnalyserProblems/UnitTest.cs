@@ -20,7 +20,7 @@ namespace MoodAnalyserTestProject
             string expected = "sad";
             MoodAnalyser mood = new MoodAnalyser(message);
             //Act
-            string actual = mood.AnalyseMood();
+            string actual = mood.AnalyserMood();
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -37,7 +37,7 @@ namespace MoodAnalyserTestProject
             string expected = "happy";
             MoodAnalyser mood = new MoodAnalyser(message);
             //Act
-            string actual = mood.AnalyseMood();
+            string actual = mood.AnalyserMood();
             //Assert
             Assert.AreEqual(expected, actual);
         }
