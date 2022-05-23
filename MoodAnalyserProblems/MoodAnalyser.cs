@@ -18,30 +18,33 @@ namespace MoodAnalyserProblems
         {
             this.message = message;
         }
-        /// <summary>
-        /// Creating Method for Happy Or Sad Mood.
-        /// <summary>
-        /// <return>
-        //Method to analyse the mood from the given message UC1
-        public string AnalyserMood()
+        public string AnalyseMood()
         {
-            //Handling exception if user provide null value UC2
-            try
-            {
-
-                if (message.ToLower().Contains("sad"))
+                //Handling exception if user provide null or Empty value UC2 nd UC3
+                try
                 {
+                    //In case of null or empty mood throw custom exception MoodAnaltsisException UC3.
+                    if (this.message.Equals(null))
+                    {
+                        throw new MoodAnalysisException(MoodAnalysisException.ExceptionTypes.NULL_MOOD_EXCEPTION, "Message should not be null");
+                    }
+                    else if (this.message.Equals(string.Empty))
+                    {
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionTypes.EMPTY_MOOD_EXCEPTION, "Message should not be empty");
+                    }
+                    else if (message.ToLower().Contains("Sad"))
+                    {
                     return "sad";
+                    }
+                    else
+                    {
+                    return "happy";
+                    }
                 }
-                else
+                catch (NullReferenceException)
                 {
                     return "happy";
                 }
-            }
-            catch (NullReferenceException)
-            {
-                return "happy";
-            }
         }
     }
 }
