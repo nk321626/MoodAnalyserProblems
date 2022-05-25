@@ -13,6 +13,11 @@ namespace MoodAnalyserProblems
     {
         //Declearing Variables Refactor.
         public string message;
+        //Default Constructor(UC4)
+        public MoodAnalyser()
+        {
+            Console.WriteLine("Default Constructor");
+        }
         //Constructor to initialize Message Refactor.
         public MoodAnalyser(string message)
         {
